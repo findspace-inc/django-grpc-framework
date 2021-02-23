@@ -42,7 +42,6 @@ class Service:
                 def handler(request, context):
                     # db connection state managed similarly to the wsgi handler
                     db.reset_queries()
-                    db.close_old_connections()
                     try:
                         self = cls(**initkwargs)
                         self.request = request
